@@ -4,20 +4,15 @@
 # REST简介
 
 REST全称为 **REpresentational State Transfer**，翻译为表述性状态传递。
-REST并不是一个框架，而是一种前后端交互的规范或约定。使用REST风格的系统称为RESTful系统，
-RESTful系统简化了前后端的通信，且有无状态（stateless）及前后端分离等特性。
+REST并不是一个框架，而是一种前后端交互的规范或约定。使用REST风格的系统称为RESTful系统，RESTful系统简化了前后端的通信，且有无状态（stateless）及前后端分离等特性。
 
-REST最早由Roy Fielding在其博士论文Architectural Styles and the Design of Network-based Software Architectures
-中定义，
+REST最早由Roy Fielding在其博士论文Architectural Styles and the Design of Network-based Software Architectures中定义。
 
 ## 前后端分离
 
-在RESTful系统中，通过约定RESTful API，前后端可以做到独立开发，并且可以在保证接口不变的情况下任意替换前后端
-的实现语言，比如一套服务端接口可以提供给Web、小程序、Android/iOS客户端同时使用，
-或者服务端实现也可以换用不同的框架甚至语言。
+在RESTful系统中，通过约定RESTful API，前后端可以做到独立开发，并且可以在保证接口不变的情况下任意替换前后端的实现语言，比如一套服务端接口可以提供给Web、小程序、Android/iOS客户端同时使用，或者服务端实现也可以换用不同的框架甚至语言。
 
-一般RESTful系统有静态的前端资源和服务器，部署上会单独部署前端服务（Nginx或CDN），使用反向代理将前端请求转发给后端服务，
-由于无状态的特性，后端服务可以横向扩展，在流量高峰期可以通过扩容后端服务器以服务更多的请求。
+一般RESTful系统有静态的前端资源和服务器，部署上会单独部署前端服务（Nginx或CDN），使用反向代理将前端请求转发给后端服务，由于无状态的特性，后端服务可以横向扩展，在流量高峰期可以通过扩容后端服务器以服务更多的请求。
 
 ## 前后端交互
 
