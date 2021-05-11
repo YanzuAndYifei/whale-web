@@ -167,7 +167,7 @@ FLUSH PRIVILEGES;
 #### 也可打开 DBeaver 的sql编辑器执上面的sql脚本
 ![mysql-connect-DBeaver-04](./images/task00-mysql-connect-DBeaver-04.png)
 
-断开连接后，使用新用户连接新数据库`/usr/local/mysql/bin/mysql -u bluewhale -p bluewhale`，你将看到连接成功的信息：
+断开连接后，使用新用户连接新数据库`/usr/local/mysql/bin/mysql -ubluewhale -pbluewhale`，你将看到连接成功的信息：
 ![mysql connect success info](./images/task00-mysql-connect.png)
 #### 如果用 DBeaver 可以编辑连接信息,通过 bluewhale 用户的连接 bluewhale 数据库:
 ![mysql-connect-DBeaver-05](./images/task00-mysql-connect-DBeaver-05.png)
