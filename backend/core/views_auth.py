@@ -71,6 +71,22 @@ def get_user_info(request):
     else:
         return Response({"data": None, "code": 0}, status=status.HTTP_401_UNAUTHORIZED)
 
+@api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+def delete_user_info(request):
+    data = request.data
+    email = data.get('email')
+    user = UserModel.objects.filter(email=email).first()
+    user.delete()
+
+@api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+def update_user_info(request):
+    data = request.data
+    email = data.get('email')
+    user = UserModel.objects.filter(email=email).first()
+    serializer = UserSerializer(user)
+    serializer.save()
 
 @api_view(['POST'])
 def send_verification_mail(request):
