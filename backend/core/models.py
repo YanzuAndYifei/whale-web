@@ -13,6 +13,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     phone = models.CharField(_('phone'), max_length=30, blank=True, unique=True, null=True)
     nickname = models.CharField(_('nickname'), max_length=150, blank=True)
+    user_image = models.CharField(_('user_image'), max_length=255, blank=True)
+    wechat = models.CharField(_('user_image'), max_length=30, blank=True)
+    school = models.CharField(_('user_image'), max_length=30, blank=True)
+    major = models.CharField(_('major'), max_length=30, blank=True)
+    company = models.CharField(_('company'), max_length=30, blank=True)
+    position = models.CharField(_('position'), max_length=30, blank=True)
     is_active = models.BooleanField(
         _('active'),
         default=True,
