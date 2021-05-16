@@ -48,7 +48,27 @@ mysqld  --initialize
 
 后端 http://127.0.0.1:8000/
 
-### 2. 笔记（Windows环境）
+### 2.MAC环境遇到的坑及解决方法
+
+#### 1） 开启了数据库，但后端服务无法开启的问题
+
+**解决方法**： 尝试在`backend/bluewhale/setting.py` 中`DATABASES`内容中的`HOST`的值更改为`127.0.0.1`
+
+#### 2) 在swagger的页面中，进行文档的编写，运行的时候404的问题
+
+**解决过程**：（可能）将编写的文档保留替换掉原先的文档，重启**mock**的内容
+
+#### 3）登陆界面401未授权的情况
+
+**解决过程**：在task00的时候注册的超级用户，将超级用户的账号密码登陆，即可显示对应的用户信息。
+
+#### 4）swagger启动不成功？
+
+**解决过程**： 全程保持前端，后端，数据库的开启，在开启的状态再启动`swagger`
+
+
+
+### 3. 笔记（Windows环境）
 #### A) MySQL
 ```
 use bluewhale;
@@ -61,7 +81,7 @@ select * from core_user;
 `docker run -d -p 81:8080 -v C:\UserRepo\whale-web:/mnt -e SWAGGER_FILE=/mnt/openapi.yaml  swaggerapi/swagger-editor`
 `docker stop <CcontainerId>`
 
-### 3. Useful link
+### 4. Useful link
 - Swagger语法及学习 https://huangwenchao.gitbooks.io/swagger/content/
 - Docker command https://docs.docker.com/engine/reference/commandline/run/
 - Swagger Docker doc https://github.com/swagger-api/swagger-editor#docker
