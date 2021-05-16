@@ -21,6 +21,64 @@ paths:
                     $ref: "#/components/schemas/User"
                   code:
                     type: integer
+  "/api/v1/register":
+    post:
+      summary: register a new user
+      responses:
+        '200':
+          description: succeed to register a new user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/User"
+                  code:
+                    type: integer
+  "/api/v1/delete":
+    post:
+      summary: delete an user
+      parameters:
+        - in: header
+          name: email
+          schema:
+            type: string
+            format: email
+          required: true
+          description: User's email
+      responses:
+        '200':
+          description: succeed to delete the user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/User"
+                  code:
+                    type: integer
+  "/api/v1/update":
+    post:
+      summary: update the user's profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        '200':
+          description: current user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/User"
+                  code:
+                    type: integer
   "/api/v1/login":
     options:
       summary: get csrf token
