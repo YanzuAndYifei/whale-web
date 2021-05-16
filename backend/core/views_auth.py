@@ -82,9 +82,7 @@ def delete_user_info(request):
 @api_view(['POST'])
 # @permission_classes([IsAuthenticated])
 def update_user_info(request):
-    data = request.data
-    email = data.get('email')
-    user = UserModel.objects.filter(email=email).first()
+    user = request.data
     serializer = UserSerializer(user)
     serializer.save()
 

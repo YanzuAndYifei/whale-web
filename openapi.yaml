@@ -24,6 +24,11 @@ paths:
   "/api/v1/register":
     post:
       summary: register a new user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginForm"
       responses:
         '200':
           description: succeed to register a new user
@@ -39,14 +44,11 @@ paths:
   "/api/v1/delete":
     post:
       summary: delete an user
-      parameters:
-        - in: header
-          name: email
-          schema:
-            type: string
-            format: email
-          required: true
-          description: User's email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
       responses:
         '200':
           description: succeed to delete the user
@@ -178,6 +180,18 @@ components:
           type: string
           format: ipv4
         description:
+          type: string
+        user_image:
+          type: string
+        wechat:
+          type: string
+        school:
+          type: string
+        major:
+          type: string
+        company:
+          type: string
+        position:
           type: string
         groups:
           type: array
