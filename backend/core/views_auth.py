@@ -73,6 +73,30 @@ def get_user_info(request):
 
 
 @api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+def delete_user_info(request):
+    user = request.user
+    phone = user.get('phone')
+    user = UserSerializer.objects.filter(phone=phone).first()
+    user.delete()
+
+
+@api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+def update_user_info(request):
+    user = request.data
+    serializer = UserSerializer(user)
+    serializer.save()
+
+
+@api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+def add_user_info(request):
+    serializer = UserSerializer(request.POST)
+    serializer.save()
+
+
+@api_view(['POST'])
 def send_verification_mail(request):
     data = request.data
     email = data.get('email')

@@ -17,7 +17,9 @@ from django.urls import include, path
 from django.contrib.auth import get_user_model
 from rest_framework import routers
 from rest_auth.views import LogoutView
-from core.views_auth import BluewhaleLoginView, get_user_info, send_verification_mail,\
+#from core.views_auth import BluewhaleLoginView, get_user_info, send_verification_mail,\
+from core.views_auth import BluewhaleLoginView, get_user_info, add_user_info, update_user_info, delete_user_info, \
+    send_verification_mail,\
     verify_verification_token,\
     register
 from blog.views import ArticleListCreateView, ArticleDetailView
@@ -39,7 +41,7 @@ urlpatterns = [
 
     path(f'{api_prefix}/me/add', add_user_info, name='user profile'),
     path(f'{api_prefix}/me/delete', delete_user_info, name='user profile'),
-    path(f'{api_prefix}/me/modify', modify_user_info, name='user profile'),
+    path(f'{api_prefix}/me/update', update_user_info, name='user profile'),
 
     path(f'{api_prefix}/articles', ArticleListCreateView.as_view(), name='articles'),
     path(f'{api_prefix}/articles/<pk>', ArticleDetailView.as_view(), name='article'),
