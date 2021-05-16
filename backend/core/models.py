@@ -13,6 +13,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     phone = models.CharField(_('phone'), max_length=30, blank=True, unique=True, null=True)
     nickname = models.CharField(_('nickname'), max_length=150, blank=True)
+    user_img = models.CharField(max_length=50, verbose_name='', default="")
+    wx_num = models.CharField(max_length=50, verbose_name='', default='')
+    school  = models.CharField(max_length=50, verbose_name='', default='')
+    majority = models.CharField(max_length=50, verbose_name='', default='')
+    compeny = models.CharField(max_length=50, verbose_name='', default='')
+    title = models.CharField(max_length=50, verbose_name='', default='')
+    
     is_active = models.BooleanField(
         _('active'),
         default=True,
