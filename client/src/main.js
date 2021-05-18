@@ -18,3 +18,34 @@ new Vue({
   store,
   render: (h) => h(App),
 }).$mount('#app');
+
+new Vue({
+  store,
+  render:(h) => h(App),
+}).$mount('#app');
+
+export default{
+  namespaced: true,
+  state: getInitialUserInfo(),
+  getters,
+  actions,
+  mutations,
+};
+
+store = new Vuex.store({
+  state:{
+    count:1
+  },
+  mutations:{
+    increment(state){
+      state.count++
+    }
+  },
+  actions:{
+    increment({commit}){
+      commit('increment')
+    }
+  }
+})
+
+this.$store.dispatch('increment')
