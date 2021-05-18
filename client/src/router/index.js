@@ -9,8 +9,13 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Layout,
-    redirect: '/articles',
+    redirect: '/home',
     children: [
+      {
+        path: 'home',
+        name: 'home',
+        component: () => import('../views/HomePage.vue'),
+      },
       {
         path: 'articles',
         name: 'articles',
@@ -40,6 +45,11 @@ const routes = [
         path: 'subscribes',
         name: 'subscribes',
         component: () => import('../views/Subscribes.vue'),
+      },
+      {
+        path: 'rank',
+        name: 'rank',
+        component: () => import('../views/Rank.vue'),
       },
       {
         path: 'login',

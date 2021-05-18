@@ -8,17 +8,25 @@
           src="../assets/bluewhale.png"
           max-height="48"
         />
-      <v-btn plain to="/articles">
-        <v-icon>mdi-newspaper-variant-multiple</v-icon>
-        最新
+      <v-btn plain to="/home">
+        <v-icon>mdi-home</v-icon>
+        首页
       </v-btn>
-      <v-btn plain to="/qa">
-        <v-icon>mdi-frequently-asked-questions</v-icon>
-        问答
+      <v-btn plain to="/articles">
+        <v-icon>mdi-book-open-variant</v-icon>
+        文章
       </v-btn>
       <v-btn plain to="/subscribes">
-        <v-icon>mdi-table-heart</v-icon>
-        关注
+        <v-icon>mdi-account-multiple</v-icon>
+        领域
+      </v-btn>
+      <v-btn plain to="/qa">
+        <v-icon>mdi-chat-processing</v-icon>
+        交流
+      </v-btn>
+      <v-btn plain to="/rank">
+        <v-icon>mdi-clipboard-list</v-icon>
+        榜单
       </v-btn>
       <v-spacer></v-spacer>
       <v-btn icon to="/articles/editor/add" v-show="isAuthenticated">
@@ -33,7 +41,7 @@
             v-bind="attrs"
             v-on="on"
           >
-            <v-icon>mdi-incognito</v-icon>
+            <v-icon>mdi-account</v-icon>
           </v-btn> -->
           <v-avatar
             v-bind="attrs"
@@ -42,7 +50,7 @@
               :src="gravatar"
             >
             <v-icon v-else>
-              mdi-incognito
+              mdi-account
             </v-icon>
           </v-avatar>
         </template>
@@ -52,7 +60,7 @@
               <v-icon>mdi-login</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              Login
+              登录
             </v-list-item-content>
           </v-list-item>
           <v-list-item v-else @click="signOutUser">
@@ -60,7 +68,7 @@
               <v-icon>mdi-logout</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              Logout
+              注销登录
             </v-list-item-content>
           </v-list-item>
         </v-list>
